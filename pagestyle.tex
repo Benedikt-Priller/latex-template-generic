@@ -1,0 +1,84 @@
+% !TEX root = ../*.tex
+
+% Margins -----------------------------------------------------------------
+\setlength{\topskip}{\ht\strutbox}
+\geometry{
+    a4paper,
+    left=25mm,
+    right=25mm,
+    top=25mm,
+    bottom=25mm
+}
+\setlength{\marginparwidth}{2.5cm}
+\setlength{\parindent}{0pt}
+
+\usepackage[
+	automark,
+	headsepline,
+	ilines
+]{scrlayer-scrpage}
+
+% Header and footer -----------------------------------------------------------
+\pagestyle{scrheadings}
+\clearpairofpagestyles
+
+% Header
+\renewcommand{\headfont}{\normalfont}
+\lohead{\large{\textsc{\schoolsubject}}\\ \small{\class}}
+\rohead{\today \\ Priller, Benedikt}
+\setlength{\headheight}{15mm}
+
+% Footer
+\ifoot{Version: \aktuelleVersion}
+\ofoot[{Seite \thepage\\/\pageref*{LastPage}}]{Seite \thepage\ / \pageref*{LastPage}}
+
+% Headings according to DIN 5008 in an alignment line
+% ------------------------------------------------------------------------------
+
+% Define distance between numbering and heading
+\newcommand{\headingSpace}{1.5cm}
+
+% Indentation
+\DeclareTOCStyleEntry[indent=0.0cm, numwidth=\headingSpace]{default}{section}
+\DeclareTOCStyleEntry[indent=0.0cm, numwidth=\headingSpace]{default}{subsection}
+\DeclareTOCStyleEntry[indent=0.0cm, numwidth=\headingSpace]{default}{subsubsection}
+\DeclareTOCStyleEntry[indent=0.0cm, numwidth=\headingSpace]{default}{figure}
+\DeclareTOCStyleEntry[indent=0.0cm, numwidth=\headingSpace]{default}{table}
+
+% General
+% ------------------------------------------------------------------------------
+\onehalfspacing % line spacing 1,5 Zeilen
+\frenchspacing
+\clubpenalty = 10000
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+\counterwithout{footnote}{section}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+% Modify enumeration
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}}
+
+% Section numbering with roman numerals
+\renewcommand\thesection{\Roman{section}}
+\renewcommand\thesubsection{\arabic{subsection}}
+\sectionfont{\color{myb}}
+\subsectionfont{\color{myb}}
+
+% Configure siunitx with the decimal mark character
+\sisetup{
+    output-decimal-marker = {,},
+    detect-all
+}
+
+\setlength\fboxsep{5pt}
+% Global configuration for the first level of enumerate
+\setlist[enumerate,1]{%
+  labelindent=0pt,               % No label indentation
+  %labelwidth=\widthof{\ref{last-item}},  % Width based on the widest reference (adjust if needed)
+  label=\arabic*.,               % Numbering as 1., 2., 3., etc.
+  %itemindent=1em,                % Indent between label and text
+  leftmargin=*                   % Automatically compute the left margin based on labelwidth and itemindent
+}

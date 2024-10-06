@@ -1,0 +1,150 @@
+% !TEX root = ../*.tex
+
+% Anpassung an Landessprache ---------------------------------------------------
+\usepackage{babel}
+
+% Umlaute ----------------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{lastpage}
+
+% font ----------------------------------------------------------------------
+\usepackage{lmodern}
+\usepackage{relsize}
+\usepackage{soul}
+
+% tables ---------------------------------------------------------------------
+\PassOptionsToPackage{table}{xcolor}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{makecell}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage{lscape}
+\newcolumntype{x}[1]{>{\raggedleft\hspace{0pt}}p{#1}} 
+
+% graphics ---------------------------------------------------------------------
+\usepackage[dvips,final]{graphicx}
+\usepackage{graphics}
+\usepackage{floatflt}
+\usepackage{float}
+\graphicspath{{graphics/}}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+
+% other ------------------------------------------------------------------------
+% \usepackage[titles]{tocloft} % Inhaltsverzeichnis DIN 5008 gerecht einrücken
+\usepackage{lmodern,amsmath,amsfonts,amsthm,amssymb,mathtools}
+\usepackage{siunitx} 
+\usepackage{wasysym}
+\usepackage{dsfont}
+\usepackage{pgf,tikz}
+\usepackage{enumitem}
+\usepackage{xspace}
+\usepackage{witharrows}
+\usepackage{makeidx}
+\usepackage[printonlyused]{acronym}
+\usepackage[acronym]{glossaries}
+\usepackage{calc}
+\usepackage{nicefrac}
+\usepackage[version=4]{mhchem}
+\usepackage{xcolor}
+
+% Einfache Definition der Zeilenabstände und Seitenränder etc.
+\usepackage{setspace}
+\usepackage[
+    tmargin=2cm,
+    rmargin=1in,
+    lmargin=1in,
+    margin=0.85in,
+    bmargin=2cm,
+    footskip=.2in
+]{geometry}
+
+% Symbolverzeichnis
+\usepackage[intoc]{nomencl}
+\let\abbrev\nomenclature
+\renewcommand{\nomname}{Abkürzungsverzeichnis}
+\setlength{\nomlabelwidth}{.25\hsize}
+\renewcommand{\nomlabel}[1]{#1 \dotfill}
+\setlength{\nomitemsep}{-\parsep}
+
+\usepackage{varioref}
+\usepackage{url}
+
+\usepackage{chngcntr}
+\usepackage{ifthen} % bei der Definition eigener Befehle benötigt
+\usepackage{todonotes} % definiert u.a. die Befehle \todo und \listoftodos
+\usepackage[square,numbers]{natbib} % wichtig für korrekte Zitierweise
+\usepackage{vhistory} % Dokument Versionierung
+
+% PDF-Optionen -----------------------------------------------------------------
+\usepackage{pdfpages}
+\pdfminorversion=5 % erlaubt das Einfügen von pdf-Dateien bis Version 1.7, ohne eine Fehlermeldung zu werfen (keine Garantie für fehlerfreies Einbetten!)
+\usepackage[
+    bookmarks,
+    bookmarksnumbered,
+    bookmarksopen=true,
+    bookmarksopenlevel=1,
+    colorlinks=true,
+% diese Farbdefinitionen zeichnen Links im PDF farblich aus
+    anchorcolor=mylink,% Ankertext
+    citecolor=mylink, % Verweise auf Literaturverzeichniseinträge im Text
+    filecolor=mylink, % Verknüpfungen, die lokale Dateien öffnen
+    menucolor=mylink, % Acrobat-Menüpunkte
+    urlcolor=mylink,
+    pdftex,
+    plainpages=false, % zur korrekten Erstellung der Bookmarks
+    pdfpagelabels=true, % zur korrekten Erstellung der Bookmarks
+    hypertexnames=false, % zur korrekten Erstellung der Bookmarks
+    linkcolor=black,
+    linktoc=all,
+]{hyperref}
+\hypersetup{
+    pdftitle={\titel -- \untertitel},
+    pdfauthor={\autorName},
+    pdfcreator={\autorName},
+    pdfsubject={\titel -- \untertitel},
+    pdfkeywords={\titel -- \untertitel},
+}
+
+\usepackage{sectsty}   % For customizing section style
+\usetikzlibrary{angles,
+                quotes,
+                calc,
+                patterns,
+                arrows.meta,
+                patterns.meta,
+                shadows,
+                external,
+                decorations.pathreplacing}
+\usepackage{venndiagram}
+
+\usepackage[varbb]{newpxmath}
+\usepackage{xfrac}
+\usepackage[makeroom]{cancel}
+\usepackage{bookmark}
+\usepackage{theoremref}
+\usepackage[most,many,breakable]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{etoolbox}
+%\usepackage{authblk}
+\usepackage{nameref}
+\usepackage{multicol}
+\usepackage{tikz-cd}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{comment} % enables the use of multi-line comments (\ifx \fi) 
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{transparent}
+\usepackage{ulem}
+
+\newcommand\mycommfont[1]{\footnotesize\ttfamily\textcolor{blue}{#1}}
+\SetCommentSty{mycommfont}
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
+
+\usepackage{tikzsymbols}
+\renewcommand\qedsymbol{$\Laughey$}
