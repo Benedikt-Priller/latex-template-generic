@@ -384,6 +384,45 @@
 	#1,
 }
 
+%================================
+% MATERIAL BOX
+%================================
+
+\tcbuselibrary{skins}
+\newtcolorbox{materialbox}[1][]{%
+	enhanced jigsaw,
+	colback=gray!20!white,    % Background color
+	colframe=gray!80!black,    % Frame color
+	size=small,
+	boxrule=1pt,
+	title=\textbf{Material},   % Title of the box
+	halign title=flush center,  % Title alignment
+	coltitle=black,             % Title text color
+	breakable,                  % Allow the box to break across pages
+	drop shadow=black!50!white, % Drop shadow effect
+	attach boxed title to top left={xshift=1cm,yshift=-\tcboxedtitleheight/2,yshifttext=-\tcboxedtitleheight/2}, % Title position
+	minipage boxed title=2cm,   % Title box width
+	boxed title style={%
+		colback=white,
+		size=fbox,
+		boxrule=1pt,
+		boxsep=2pt,
+		underlay={%
+			\coordinate (dotA) at ($(interior.west) + (-0.5pt,0)$);
+			\coordinate (dotB) at ($(interior.east) + (0.5pt,0)$);
+			\begin{scope}
+				\clip (interior.north west) rectangle ([xshift=3ex]interior.east);
+				\filldraw [white, blur shadow={shadow opacity=60, shadow yshift=-.75ex}, rounded corners=2pt] (interior.north west) rectangle (interior.south east);
+			\end{scope}
+			\begin{scope}[gray!80!black]
+				\fill (dotA) circle (2pt);
+				\fill (dotB) circle (2pt);
+			\end{scope}
+		},
+	},
+	#1,
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % TABLE OF CONTENTS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
