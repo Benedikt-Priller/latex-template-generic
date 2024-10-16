@@ -25,6 +25,13 @@
 \newcommand{\zB}{\mbox{z.\,B.}\xspace}
 
 % Commands for frequently occurring tasks
+\newenvironment{tightcenter}{%
+  \setlength\topsep{0pt}
+  \setlength\parskip{0pt}
+  \begin{center}
+}{%
+  \end{center}
+}
 \newcommand{\itemd}[2]{\item{\textbf{#1}}\\{#2}}
 \newcommand{\myunit}[1]{\quad\si{[#1]}}
 \newcommand{\myvarunit}[1]{& \llap{\si{[#1]}}&\quad}
