@@ -1,12 +1,12 @@
 % !TEX root = ../*.tex
 
-\definecolor{mylink}{RGB}{45, 111, 177}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SELF MADE COMMANDS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Abbreviations, if necessary with correct spaces
+%==========================================================
+% Abbreviations with correct space
+%==========================================================
 \newcommand{\bspw}{bspw.\xspace}
 \newcommand{\bzw}{bzw.\xspace}
 \newcommand{\ca}{ca.\xspace}
@@ -24,7 +24,9 @@
 \newcommand{\Vgl}{Vgl.\xspace}
 \newcommand{\zB}{\mbox{z.\,B.}\xspace}
 
+%==========================================================
 % Commands for frequently occurring tasks
+%==========================================================
 \newenvironment{tightcenter}{%
   \setlength\topsep{0pt}
   \setlength\parskip{0pt}
@@ -53,19 +55,28 @@
   {\colorbox{#1}{$\textstyle\strut#2$}}%
   {\colorbox{#1}{$\scriptstyle\strut#2$}}%
   {\colorbox{#1}{$\scriptscriptstyle\strut#2$}}}
-\newcolumntype{Y}{>{\centering\arraybackslash}X}
 
-% Easy change of font e. g.: \changefont{cmss}{sbc}{n}
+%==========================================================
+% Table associated
+%==========================================================
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\newcolumntype{C}{>{$}c<{$}} % Centered column in math mode
+\newcolumntype{L}{>{$}l<{$}} % Left-aligned column in math mode
+\newcolumntype{R}{>{$}r<{$}} % Right-aligned column in math mode
+
+%==========================================================
+% Font associated
+%==========================================================
 \newcommand{\changefont}[3]{\fontfamily{#1} \fontseries{#2} \fontshape{#3} \selectfont}
 
-% Verwendung analog zu \includegraphics
+%==========================================================
+% Graphics associated
+%==========================================================
 \newlength{\myx}
 \newlength{\myy}
 \newcommand\includegraphicstotab[2][\relax]{%
-% Abspeichern der Bildabmessungen
 \settowidth{\myx}{\includegraphics[{#1}]{#2}}%
 \settoheight{\myy}{\includegraphics[{#1}]{#2}}%
-% das eigentliche Einfügen
 \parbox[c][1.1\myy][c]{\myx}{%
 \includegraphics[{#1}]{#2}}%
 }
@@ -76,6 +87,9 @@
 \newcommand{\Fachbegriff}[2][\empty]{\ifthenelse{\equal{#1}{\empty}}{\textit{\Index{#2}}}{\textit{\Index[#1]{#2}}}}
 \newcommand{\NeuerBegriff}[2][\empty]{\ifthenelse{\equal{#1}{\empty}}{\textbf{\Index{#2}}}{\textbf{\Index[#1]{#2}}}}
 
+%==========================================================
+% Element shortcuts
+%==========================================================
 \newcommand{\thm}[2]{\begin{Theorem}{#1}{}#2\end{Theorem}}
 \newcommand{\cor}[2]{\begin{Corollary}{#1}{}#2\end{Corollary}}
 \newcommand{\mlenma}[2]{\begin{Lenma}{#1}{}#2\end{Lenma}}
@@ -122,7 +136,9 @@
 		}
 }
 
-% deliminators
+%==========================================================
+% Deliminator
+%==========================================================
 \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 \DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
 
