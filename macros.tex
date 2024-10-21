@@ -55,6 +55,11 @@
   {\colorbox{#1}{$\textstyle\strut#2$}}%
   {\colorbox{#1}{$\scriptstyle\strut#2$}}%
   {\colorbox{#1}{$\scriptscriptstyle\strut#2$}}}
+\newcommand{\hlbox}[3][yellow]{\mathchoice%
+  {\fcolorbox{#2}{#1}{$\displaystyle\strut#3$}}%
+  {\fcolorbox{#2}{#1}{$\textstyle\strut#3$}}%
+  {\fcolorbox{#2}{#1}{$\scriptstyle\strut#3$}}%
+  {\fcolorbox{#2}{#1}{$\scriptscriptstyle\strut#3$}}}
 
 %==========================================================
 % Table associated
