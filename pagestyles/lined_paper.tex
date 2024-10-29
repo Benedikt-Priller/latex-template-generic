@@ -81,15 +81,16 @@
   leftmargin=*                   % Automatically compute the left margin based on labelwidth and itemindent
 }
 
-% Lined Paper Background ------------------------------------------------------------
-\usepackage{tikz}
-\newcommand{\drawlines}{%
-    \begin{tikzpicture}[remember picture, overlay]
-        \foreach \y in {25mm,50mm,...,\paperheight-20mm} {
-            \draw[gray!30, line width=0.4pt] (current page.west|-0,\y) -- (current page.east|-0,\y);
-        }
-    \end{tikzpicture}
+\backgroundsetup{
+    scale=1,
+    color=black,
+    position=current page.south,
+    vshift=25mm,
+    contents={%
+        \begin{tikzpicture}[remember picture, overlay]
+            \foreach \y in {0cm,0.75cm,...,29.7cm} {
+                \draw[gray!30, line width=0.4pt] (current page.west|-0,\y) -- (current page.east|-0,\y);
+            }
+        \end{tikzpicture}
+    }
 }
-
-% Add lines to each page
-\AddToShipoutPicture{\drawlines}
