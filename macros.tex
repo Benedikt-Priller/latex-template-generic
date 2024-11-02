@@ -75,6 +75,30 @@
 \newcommand{\changefont}[3]{\fontfamily{#1} \fontseries{#2} \fontshape{#3} \selectfont}
 
 %==========================================================
+% TikzPicture associated
+%==========================================================
+\NewDocumentCommand{\FormatMultipleOfGivenValue}{s O{} m}{%
+    %% #1 = * to suppress the display of "0"
+    %% #2 = multiplier to display
+    %% #3 = real number
+    \pgfmathifisint{#3}{%
+        \pgfmathparse{int(#3)}%
+        \ifnum\pgfmathresult=0
+            \IfBooleanF{#1}{0}% Suppress "0" if * option provided.
+        \else
+            \ifnum\pgfmathresult=1\relax
+                %% https://tex.stackexchange.com/q/53068
+                \ifx#2\pi\relax\pi\else1\fi
+            \else
+                \pgfmathresult#2
+            \fi
+        \fi
+    }{%
+        \pgfmathprintnumber{#3}#2
+    }%
+}%
+
+%==========================================================
 % Graphics associated
 %==========================================================
 \newlength{\myx}
