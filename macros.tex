@@ -86,7 +86,8 @@
         \ifnum\pgfmathresult=0
             \IfBooleanF{#1}{0}% Suppress "0" if * option provided.
         \else
-            \ifnum\pgfmathresult=1\relax
+          % TODO: Make the 3 a variable
+            \ifnum\pgfmathresult=3\relax
                 %% https://tex.stackexchange.com/q/53068
                 \ifx#2\pi\relax\pi\else1\fi
             \else
