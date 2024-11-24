@@ -82,7 +82,7 @@
 % PDF-Optionen -----------------------------------------------------------------
 \usepackage{pdfpages}
 \usepackage{pdflscape}
-\pdfminorversion=5 % erlaubt das Einfügen von pdf-Dateien bis Version 1.7, ohne eine Fehlermeldung zu werfen (keine Garantie für fehlerfreies Einbetten!)
+\pdfminorversion=5
 \usepackage[
     bookmarks,
     bookmarksnumbered,
@@ -112,15 +112,20 @@
 
 \usepackage{sectsty}   % For customizing section style
 \usetikzlibrary{angles,
-                quotes,
-                calc,
-                patterns,
+                arrows,
                 arrows.meta,
-                patterns.meta,
-                shadows,
-                external,
+                calc,
                 decorations.pathreplacing,
-                fpu}
+                external,
+                fpu,
+                patterns,
+                patterns.meta,
+                positioning,
+                quotes,
+                shadows,
+                shapes,
+                shapes.geometric
+                }
 \usepackage{venndiagram}
 
 \usepackage[varbb]{newpxmath}
