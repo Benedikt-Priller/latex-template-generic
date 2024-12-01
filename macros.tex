@@ -48,6 +48,10 @@
  \path (#3) --node[circle,fill,inner sep=.5pt]{} ($($(#3)!#1!(#2)$)!#1!90:(#2)$);
 }
 \newcommand{\ols}[1]{\mskip.5\thinmuskip\overline{\mskip-.5\thinmuskip {#1} \mskip-.5\thinmuskip}\mskip.5\thinmuskip}
+
+%==========================================================
+% Text highlighting
+%==========================================================
 \newcommand{\olsi}[1]{\,\overline{\!{#1}}}
 \newcommand{\doubleunderline}[1]{\underline{\underline{#1}}}
 \newcommand{\highlight}[2][yellow]{\mathchoice%
@@ -60,6 +64,23 @@
   {\fcolorbox{#2}{#1}{$\textstyle\strut#3$}}%
   {\fcolorbox{#2}{#1}{$\scriptstyle\strut#3$}}%
   {\fcolorbox{#2}{#1}{$\scriptscriptstyle\strut#3$}}}
+
+\newlength{\DepthReference}
+\settodepth{\DepthReference}{g}
+\newlength{\HeightReference}
+\settoheight{\HeightReference}{T}
+\newlength{\Width}
+\newcommand{\MyColorBox}[2][red]%
+{%
+    \settowidth{\Width}{#2}%
+    \colorbox{#1}%
+    {%      
+        \raisebox{-\DepthReference}%
+        {%
+                \parbox[b][\HeightReference+\DepthReference][c]{\Width}{\centering#2}%
+        }%
+    }%
+}
 
 %==========================================================
 % Table associated
