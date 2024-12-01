@@ -177,6 +177,13 @@
 }
 \makeatother
 
+
+% Lower- and uppercase Roman numerals
+\makeatletter
+\newcommand*{\rom}[1]{\romannumeral #1}
+\newcommand*{\Rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
 \tikzset{
 	symbol/.style={
 			draw=none,
