@@ -105,11 +105,11 @@
     %% #3 = integer multiple n
     %% #4 = divisor d
     \pgfmathifisint{#3}{%
-        \pgfmathparse{int(#3)};
+        \pgfmathparse{int(#3)}
         \ifnum\pgfmathresult=0
             \IfBooleanF{#1}{0}% Suppress "0" if * option provided.
         \else
-            \pgfmathparse{int(mod(int(#3), #4))};
+            \pgfmathparse{int(mod(int(#3), #4))}
             \ifnum\pgfmathresult=0
                 % If #3 is divisible by m, display as a whole number times pi
                 \pgfmathsetmacro{\wholeMultiple}{int(#3 / #4)}
