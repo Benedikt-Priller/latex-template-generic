@@ -112,7 +112,7 @@
             \pgfmathparse{int(mod(int(#3), #4))};
             \ifnum\pgfmathresult=0
                 % If #3 is divisible by m, display as a whole number times pi
-                \pgfmathsetmacro{\wholeMultiple}{int(#3 / #4)};
+                \pgfmathsetmacro{\wholeMultiple}{int(#3 / #4)}
                 \ifnum\wholeMultiple=1
                     #2 % Display just x if n = 1
                 \else
@@ -124,9 +124,9 @@
                 \fi
             \else
                 % For other cases, display as a fraction
-                \pgfmathsetmacro{\numerator}{int(#3)};
-                \pgfmathsetmacro{\absNumerator}{int(abs(#3))};
-                \pgfmathsetmacro{\denominator}{#4};
+                \pgfmathsetmacro{\numerator}{int(#3)}
+                \pgfmathsetmacro{\absNumerator}{int(abs(#3))}
+                \pgfmathsetmacro{\denominator}{#4}
                 \ifnum\numerator<0
                     -\frac{\absNumerator}{\denominator}#2 % Display as -n/d x
                 \else
