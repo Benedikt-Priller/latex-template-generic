@@ -105,14 +105,14 @@
     %% #3 = integer multiple n
     %% #4 = divisor d
     \pgfmathifisint{#3}{%
-        \pgfmathparse{int(#3)}%
+        \pgfmathparse{int(#3)};
         \ifnum\pgfmathresult=0
             \IfBooleanF{#1}{0}% Suppress "0" if * option provided.
         \else
-            \pgfmathparse{int(mod(int(#3), #4))}
+            \pgfmathparse{int(mod(int(#3), #4))};
             \ifnum\pgfmathresult=0
                 % If #3 is divisible by m, display as a whole number times pi
-                \pgfmathsetmacro{\wholeMultiple}{int(#3 / #4)}
+                \pgfmathsetmacro{\wholeMultiple}{int(#3 / #4)};
                 \ifnum\wholeMultiple=1
                     #2 % Display just x if n = 1
                 \else
@@ -124,9 +124,9 @@
                 \fi
             \else
                 % For other cases, display as a fraction
-                \pgfmathsetmacro{\numerator}{int(#3)}
-                \pgfmathsetmacro{\absNumerator}{int(abs(#3))}
-                \pgfmathsetmacro{\denominator}{#4}
+                \pgfmathsetmacro{\numerator}{int(#3)};
+                \pgfmathsetmacro{\absNumerator}{int(abs(#3))};
+                \pgfmathsetmacro{\denominator}{#4};
                 \ifnum\numerator<0
                     -\frac{\absNumerator}{\denominator}#2 % Display as -n/d x
                 \else
@@ -198,7 +198,6 @@
 }
 \makeatother
 
-
 % Lower- and uppercase Roman numerals
 \makeatletter
 \newcommand*{\rom}[1]{\romannumeral #1}
@@ -222,6 +221,11 @@
   \let\@ifnextchar\new@ifnextchar
   \array{#1}}
 \makeatother
+
+% % redefine matrix env to allow for alignment, use r as default
+% \renewcommand*\env@matrix[1][r]{\hskip -\arraycolsep
+%     \let\@ifnextchar\new@ifnextchar
+%     \array{*\c@MaxMatrixCols #1}}
 
 %==========================================================
 % Deliminator
@@ -273,22 +277,14 @@
 \DeclareMathOperator{\E}{E} % expected
 
 % Since the amsthm package isn't loaded
-
 % I prefer the slanted \leq
 \let\oldleq\leq % save them in case they're every wanted
 \let\oldgeq\geq
 \renewcommand{\leq}{\leqslant}
 \renewcommand{\geq}{\geqslant}
 
-% % redefine matrix env to allow for alignment, use r as default
-% \renewcommand*\env@matrix[1][r]{\hskip -\arraycolsep
-%     \let\@ifnextchar\new@ifnextchar
-%     \array{*\c@MaxMatrixCols #1}}
-
 %\usepackage{framed}
 %\usepackage{titletoc}
-%\usepackage{etoolbox}
-%\usepackage{lmodern}
 
 %\patchcmd{\tableofcontents}{\contentsname}{\sffamily\contentsname}{}{}
 
