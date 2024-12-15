@@ -150,7 +150,6 @@
     \end{minipage}%
 }
 
-
 %==========================================================
 % Graphics associated
 %==========================================================
@@ -210,7 +209,9 @@
 }
 \makeatother
 
+%==========================================================
 % Lower- and uppercase Roman numerals
+%==========================================================
 \makeatletter
 \newcommand*{\rom}[1]{\romannumeral #1}
 \newcommand*{\Rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
@@ -414,3 +415,5 @@
 
 \newcommand{\sol}{\setlength{\parindent}{0cm}\textbf{\textit{Solution:}}\setlength{\parindent}{1cm} }
 \newcommand{\solve}[1]{\setlength{\parindent}{0cm}\textbf{\textit{Solution: }}\setlength{\parindent}{1cm}#1 \Qed}
+\newcommand*{\paral}{\stretchrel*{\parallel}{\perp}}
+\newcommand*{\Sslash}{\stretchrel*{\sslash}{\perp}}
