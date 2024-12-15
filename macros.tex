@@ -140,6 +140,17 @@
 }
 
 %==========================================================
+% Alignment associated
+%==========================================================
+\newsavebox{\tempbox}
+\newcommand{\dynamicminipage}[1]{%
+    \sbox{\tempbox}{#1}% Save the content in a box
+    \begin{minipage}{\wd\tempbox}% Create a minipage with the width of the box
+        #1% Output the content
+    \end{minipage}%
+}
+
+%==========================================================
 % Graphics associated
 %==========================================================
 \newlength{\myx}
