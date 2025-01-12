@@ -4,13 +4,13 @@
 
 \usetikzlibrary{arrows,calc,shadows.blur}
 \tcbuselibrary{skins}
-\newtcolorbox{note}[1][]{%
+\newtcolorbox{result}[1][]{%
 	enhanced jigsaw,
-	colback=gray!20!white,%
-	colframe=gray!80!black,
+	colback=blue!5!white,%  % Light blue background for distinction
+	colframe=blue!80!black,% % Dark blue frame
 	size=small,
 	boxrule=1pt,
-	title=\textbf{Ergebnis:-},
+	title=\textbf{Ergebnis:-}, % Change title
 	halign title=flush center,
 	coltitle=black,
 	breakable,
@@ -29,7 +29,7 @@
 						\clip (interior.north west) rectangle ([xshift=3ex]interior.east);
 						\filldraw [white, blur shadow={shadow opacity=60, shadow yshift=-.75ex}, rounded corners=2pt] (interior.north west) rectangle (interior.south east);
 					\end{scope}
-					\begin{scope}[gray!80!black]
+					\begin{scope}[blue!80!black] % Change dots to blue
 						\fill (dotA) circle (2pt);
 						\fill (dotB) circle (2pt);
 					\end{scope}
