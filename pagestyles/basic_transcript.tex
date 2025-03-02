@@ -27,8 +27,14 @@
 \setlength{\headheight}{15mm}
 
 % Footer
-\ifoot{Version: \aktuelleVersion}
-\ofoot[{Seite \thepage\\/\pageref*{LastPage}}]{Seite \thepage\ / \pageref*{LastPage}}
+\newtranslation[to=spanish]{Page}{Página}
+\newtranslation[to=ngerman]{Page}{Seite}
+\newtranslation[to=english]{Page}{Page}
+\newtranslation[to=spanish]{Version}{Versión}
+\newtranslation[to=ngerman]{Version}{Version}
+\newtranslation[to=english]{Version}{Version}
+\ifoot{\translate{Version}: \aktuelleVersion}
+\ofoot[\translate{Page} \thepage/\pageref*{LastPage}]{\translate{Page} \thepage\ / \pageref*{LastPage}}
 
 % Headings according to DIN 5008 in an alignment line
 % ------------------------------------------------------------------------------
