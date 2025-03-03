@@ -27,14 +27,16 @@
 \setlength{\headheight}{15mm}
 
 % Footer
-\newtranslation[to=spanish]{version}{Versión}
-\newtranslation[to=ngerman]{version}{Version}
-\newtranslation[to=english]{version}{Version}
-\newtranslation[to=spanish]{page}{Página}
-\newtranslation[to=ngerman]{page}{Seite}
-\newtranslation[to=english]{page}{Page}
-\ifoot{Version: \aktuelleVersion}
-\ofoot[Page \thepage/\pageref*{LastPage}]{Page \thepage\ / \pageref*{LastPage}}
+\DeclareTranslation{english}{version}{Version}
+\DeclareTranslation{ngerman}{version}{Version}
+\DeclareTranslation{spanish}{version}{Versión}
+
+\DeclareTranslation{english}{page}{Page}
+\DeclareTranslation{ngerman}{page}{Seite}
+\DeclareTranslation{spanish}{page}{Página}
+
+\ifoot{\GetTranslation{version}: \aktuelleVersion}
+\ofoot[\GetTranslation{page} \thepage/\pageref*{LastPage}]{\GetTranslation{page} \thepage\ / \pageref*{LastPage}}
 
 % Headings according to DIN 5008 in an alignment line
 % ------------------------------------------------------------------------------
