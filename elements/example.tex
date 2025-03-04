@@ -2,7 +2,11 @@
 % EXAMPLE BOX
 %================================
 
-\newtcbtheorem[number within=section]{Example}{Beispiel}
+\DeclareTranslation{english}{example}{Example}
+\DeclareTranslation{ngerman}{example}{Beispiel}
+\DeclareTranslation{spanish}{example}{Ejemplo}
+
+\newtcbtheorem[number within=section, auto counter]{Example}{\GetTranslation{example}}
 {%
 	colback = myexamplebg
 	,breakable
@@ -11,7 +15,7 @@
 	,boxrule = 1pt
 	,sharp corners
 	,detach title
-	,before upper=\tcbtitle\par\smallskip
+	,before upper={\ifthenelse{\equal{\tcbtitletext}{}}{}{\tcbtitle\par\smallskip}}
 	,fonttitle = \bfseries
 	,description font = \mdseries
 	,separator sign none
