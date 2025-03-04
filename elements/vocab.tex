@@ -1,0 +1,22 @@
+%================================
+% VOCAB ENTRY
+%================================
+
+% Define a command to set the vocabulary column widths
+\newcommand{\setvocabwidths}[2]{%
+    \renewcommand{\vocableftcolwidth}{#1}%
+    \renewcommand{\vocabrightcolwidth}{#2}%
+}
+
+% Initialize default column widths
+\newcommand{\vocableftcolwidth}{0.45\columnwidth}
+\newcommand{\vocabrightcolwidth}{0.45\columnwidth}
+
+% Define a new command for vocab entries with dynamic column widths
+\newcommand{\vocabentry}[2]{%
+    \noindent%
+    \small
+    \begin{tabular}{@{}p{\vocableftcolwidth}p{\vocabrightcolwidth}@{}} 
+        \textbf{#1} & #2 
+    \end{tabular} \\[-0.5ex] % Adjust spacing for uniformity
+}
