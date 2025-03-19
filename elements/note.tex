@@ -2,6 +2,10 @@
 % NOTE BOX
 %================================
 
+\DeclareTranslation{english}{note}{Note}
+\DeclareTranslation{ngerman}{note}{Merke}
+\DeclareTranslation{spanish}{note}{Nota}
+
 \usetikzlibrary{arrows,calc,shadows.blur}
 \tcbuselibrary{skins}
 \newtcolorbox{note}[1][]{%
@@ -10,7 +14,7 @@
 	colframe=gray!80!black,
 	size=small,
 	boxrule=1pt,
-	title=\textbf{Merke:-},
+	title=\textbf{\GetTranslation{note}:-},
 	halign title=flush center,
 	coltitle=black,
 	breakable,
