@@ -2,8 +2,12 @@
 % Exercise
 %================================
 
+\DeclareTranslation{english}{exercise}{Exercise}
+\DeclareTranslation{ngerman}{exercise}{Übung}
+\DeclareTranslation{spanish}{exercise}{Ejercicio}
+
 \tcbuselibrary{theorems,skins,hooks}
-\newtcbtheorem[number within=section]{Exercise}{Übung}
+\newtcbtheorem[number within=section]{Exercise}{\GetTranslation{exercise}}
 {%
 	enhanced,
 	breakable,
