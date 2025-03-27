@@ -5,7 +5,7 @@
     left=20mm,
     right=20mm,
     top=25mm,
-    bottom=35mm
+    bottom=25mm
 }
 \setlength{\marginparwidth}{2.5cm}
 \setlength{\parindent}{0pt}
@@ -22,9 +22,9 @@
 
 % Header
 \renewcommand{\headfont}{\normalfont}
-\lohead{\large{\textsc{\titel}}\\ \small{\kurzerUntertitel} \\[2ex] \textit{\headmark}}
+\lohead{\vtop{\large{\textsc{\titel}}\\ \small{\kurzerUntertitel} \\[2ex] \textit{\headmark}}}
 %\ohead{\includegraphics[scale=0.2]{Logos/Logo_BMDV.pdf}}
-\rohead{\today \\ Priller, Benedikt \\ \class}
+\rohead{\vtop{\today \\ Priller, Benedikt \\ \class}}
 \setlength{\headheight}{15mm}
 
 % Footer
