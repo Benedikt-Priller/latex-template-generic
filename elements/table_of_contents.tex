@@ -2,69 +2,69 @@
 % TABLE OF CONTENTS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{tikz}
-\definecolor{doc}{RGB}{0,60,110}
-\usepackage{titletoc}
-\contentsmargin{0cm}
-\titlecontents{chapter}[3.7pc]
-{\addvspace{30pt}%
-	\begin{tikzpicture}[remember picture, overlay]%
-		\draw[fill=doc!60,draw=doc!60] (-7,-.1) rectangle (-0.9,.5);%
-		\pgftext[left,x=-3.5cm,y=0.2cm]{\color{white}\Large\textsc\bfseries Chapter\ \thecontentslabel};%
-	\end{tikzpicture}\color{doc!60}\large\textsc\bfseries}%
-{}
-{}
-{\;\titlerule\;\large\textsc\bfseries Page \thecontentspage
-	\begin{tikzpicture}[remember picture, overlay]
-		\draw[fill=doc!60,draw=doc!60] (2pt,0) rectangle (4,0.1pt);
-	\end{tikzpicture}}%
-\titlecontents{section}[3.7pc]
-{\addvspace{2pt}}
-{\contentslabel[\thecontentslabel]{2pc}}
-{}
-{\hfill\small \thecontentspage}
-[]
-\titlecontents*{subsection}[3.7pc]
-{\addvspace{-1pt}\small}
-{}
-{}
-{\ --- \small\thecontentspage}
-[ \textbullet\ ][]
+% \usepackage{tikz}
+% \definecolor{doc}{RGB}{0,60,110}
+% \usepackage{titletoc}
+% \contentsmargin{0cm}
+% \titlecontents{chapter}[3.7pc]
+% {\addvspace{30pt}%
+% 	\begin{tikzpicture}[remember picture, overlay]%
+% 		\draw[fill=doc!60,draw=doc!60] (-7,-.1) rectangle (-0.9,.5);%
+% 		\pgftext[left,x=-3.5cm,y=0.2cm]{\color{white}\Large\textsc\bfseries Chapter\ \thecontentslabel};%
+% 	\end{tikzpicture}\color{doc!60}\large\textsc\bfseries}%
+% {}
+% {}
+% {\;\titlerule\;\large\textsc\bfseries Page \thecontentspage
+% 	\begin{tikzpicture}[remember picture, overlay]
+% 		\draw[fill=doc!60,draw=doc!60] (2pt,0) rectangle (4,0.1pt);
+% 	\end{tikzpicture}}%
+% \titlecontents{section}[3.7pc]
+% {\addvspace{2pt}}
+% {\contentslabel[\thecontentslabel]{2pc}}
+% {}
+% {\hfill\small \thecontentspage}
+% []
+% \titlecontents*{subsection}[3.7pc]
+% {\addvspace{-1pt}\small}
+% {}
+% {}
+% {\ --- \small\thecontentspage}
+% [ \textbullet\ ][]
 
-\makeatletter
-\renewcommand{\tableofcontents}{%
-	\section*{%
-	  \vspace*{-20\p@}%
-	  \begin{tikzpicture}[remember picture, overlay]%
-		  \pgftext[right,x=15cm,y=0.2cm]{\color{doc!60}\Huge\textsc\bfseries \contentsname};%
-		  \draw[fill=doc!60,draw=doc!60] (13,-.75) rectangle (20,1);%
-		  \clip (13,-.75) rectangle (20,1);
-		  \pgftext[right,x=15cm,y=0.2cm]{\color{white}\Huge\textsc\bfseries \contentsname};%
-	  \end{tikzpicture}}%
-	\@starttoc{toc}}
-\makeatother
+% \makeatletter
+% \renewcommand{\tableofcontents}{%
+% 	\section*{%
+% 	  \vspace*{-20\p@}%
+% 	  \begin{tikzpicture}[remember picture, overlay]%
+% 		  \pgftext[right,x=15cm,y=0.2cm]{\color{doc!60}\Huge\textsc\bfseries \contentsname};%
+% 		  \draw[fill=doc!60,draw=doc!60] (13,-.75) rectangle (20,1);%
+% 		  \clip (13,-.75) rectangle (20,1);
+% 		  \pgftext[right,x=15cm,y=0.2cm]{\color{white}\Huge\textsc\bfseries \contentsname};%
+% 	  \end{tikzpicture}}%
+% 	\@starttoc{toc}}
+% \makeatother
 
-\tikzdeclarepattern{
-  name=mylines,
-  parameters={
-      \pgfkeysvalueof{/pgf/pattern keys/size},
-      \pgfkeysvalueof{/pgf/pattern keys/angle},
-      \pgfkeysvalueof{/pgf/pattern keys/line width},
-  },
-  bounding box={
-    (0,-0.5*\pgfkeysvalueof{/pgf/pattern keys/line width}) and
-    (\pgfkeysvalueof{/pgf/pattern keys/size},
-0.5*\pgfkeysvalueof{/pgf/pattern keys/line width})},
-  tile size={(\pgfkeysvalueof{/pgf/pattern keys/size},
-\pgfkeysvalueof{/pgf/pattern keys/size})},
-  tile transformation={rotate=\pgfkeysvalueof{/pgf/pattern keys/angle}},
-  defaults={
-    size/.initial=5pt,
-    angle/.initial=45,
-    line width/.initial=.4pt,
-  },
-  code={
-      \draw [line width=\pgfkeysvalueof{/pgf/pattern keys/line width}]
-        (0,0) -- (\pgfkeysvalueof{/pgf/pattern keys/size},0);
-  },
-}
+% \tikzdeclarepattern{
+%   name=mylines,
+%   parameters={
+%       \pgfkeysvalueof{/pgf/pattern keys/size},
+%       \pgfkeysvalueof{/pgf/pattern keys/angle},
+%       \pgfkeysvalueof{/pgf/pattern keys/line width},
+%   },
+%   bounding box={
+%     (0,-0.5*\pgfkeysvalueof{/pgf/pattern keys/line width}) and
+%     (\pgfkeysvalueof{/pgf/pattern keys/size},
+% 0.5*\pgfkeysvalueof{/pgf/pattern keys/line width})},
+%   tile size={(\pgfkeysvalueof{/pgf/pattern keys/size},
+% \pgfkeysvalueof{/pgf/pattern keys/size})},
+%   tile transformation={rotate=\pgfkeysvalueof{/pgf/pattern keys/angle}},
+%   defaults={
+%     size/.initial=5pt,
+%     angle/.initial=45,
+%     line width/.initial=.4pt,
+%   },
+%   code={
+%       \draw [line width=\pgfkeysvalueof{/pgf/pattern keys/line width}]
+%         (0,0) -- (\pgfkeysvalueof{/pgf/pattern keys/size},0);
+%   },
+% }
