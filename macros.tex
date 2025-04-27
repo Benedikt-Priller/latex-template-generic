@@ -302,6 +302,15 @@
 \DeclareMathOperator{\E}{E} % expected
 \DeclareSIUnit{\liter}{l}
 
+% Drehmoment
+\newcommand{\moment}{
+    \mathrel{\overset{
+        \begin{tikzpicture}[baseline={(0,0)}]
+            \draw[->] (0,0) arc (180:0:0.15);
+        \end{tikzpicture}
+    }{M}}
+}
+
 % Since the amsthm package isn't loaded
 % I prefer the slanted \leq
 \let\oldleq\leq % save them in case they're every wanted
