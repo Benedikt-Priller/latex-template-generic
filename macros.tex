@@ -48,7 +48,10 @@
  \path (#3) --node[circle,fill,inner sep=.5pt]{} ($($(#3)!#1!(#2)$)!#1!90:(#2)$);
 }
 \newcommand{\ols}[1]{\mskip.5\thinmuskip\overline{\mskip-.5\thinmuskip {#1} \mskip-.5\thinmuskip}\mskip.5\thinmuskip}
-\renewcommand{\sqrt}[2][\,]{\sqrt[\leftroot{0}\uproot{2}#1]{#2}}
+% \let\oldsqrt\sqrt
+% \DeclareRobustCommand{\sqrt}[2][\,]{%
+%   \oldsqrt[\leftroot{0}\uproot{2}#1]{#2}%
+% }
 
 %==========================================================
 % Text highlighting
