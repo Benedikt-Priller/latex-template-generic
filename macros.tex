@@ -48,6 +48,7 @@
  \path (#3) --node[circle,fill,inner sep=.5pt]{} ($($(#3)!#1!(#2)$)!#1!90:(#2)$);
 }
 \newcommand{\ols}[1]{\mskip.5\thinmuskip\overline{\mskip-.5\thinmuskip {#1} \mskip-.5\thinmuskip}\mskip.5\thinmuskip}
+\renewcommand{\sqrt}[2][\,]{\sqrt[\leftroot{0}\uproot{2}#1]{#2}}
 
 %==========================================================
 % Text highlighting
@@ -442,3 +443,4 @@
 \newcommand{\solve}[1]{\setlength{\parindent}{0cm}\textbf{\textit{Solution: }}\setlength{\parindent}{1cm}#1 \Qed}
 \newcommand*{\paral}{\stretchrel*{\parallel}{\perp}}
 \newcommand*{\Sslash}{\stretchrel*{\sslash}{\perp}}
+
