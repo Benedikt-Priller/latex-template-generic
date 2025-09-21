@@ -1,4 +1,4 @@
-% !TEX root = ../*.tex
+% LTeX: language=en
 
 % Adaptation to national language ----------------------------------------------
 \usepackage{babel}
@@ -30,15 +30,16 @@
 % graphics ---------------------------------------------------------------------
 \usepackage[dvips,final]{graphicx}
 \usepackage{graphics}
-\graphicspath{{graphics/}} % Currently not used
 \usepackage{floatflt}
 \usepackage{float}
 \usepackage{wrapfig}
 \usepackage{graphicx}
-%\usepackage{svg}
+\usepackage{latex-svg}      % Custom package
+\usepackage{latex-drawio}   % Custom package
+
 
 % other ------------------------------------------------------------------------
-\usepackage[titles]{tocloft} % Inhaltsverzeichnis DIN 5008 gerecht einrücken
+\usepackage[titles]{tocloft}
 \usepackage{amsmath,amsfonts,amsthm,amssymb,mathtools}
 \usepackage{siunitx} 
 \usepackage{wasysym}
@@ -87,7 +88,7 @@
 \usepackage{ifthen} % bei der Definition eigener Befehle benötigt
 \usepackage{todonotes} % definiert u.a. die Befehle \todo und \listoftodos
 \usepackage[square,numbers]{natbib} % wichtig für korrekte Zitierweise
-\usepackage{vhistory} % Dokument Versionierung
+\usepackage{vhistory} % Document versioning
 
 % PDF-Optionen -----------------------------------------------------------------
 \usepackage{pdfpages}
@@ -98,16 +99,16 @@
     bookmarksnumbered,
     bookmarksopen=true,
     bookmarksopenlevel=1,
-    colorlinks=true, % diese Farbdefinitionen zeichnen Links im PDF farblich aus
-    anchorcolor=mylink, % Ankertext
-    citecolor=mylink, % Verweise auf Literaturverzeichniseinträge im Text
-    filecolor=mylink, % Verknüpfungen, die lokale Dateien öffnen
-    menucolor=mylink, % Acrobat-Menüpunkte
+    colorlinks=true,        % diese Farbdefinitionen zeichnen Links im PDF farblich aus
+    anchorcolor=mylink,     % Ankertext
+    citecolor=mylink,       % Verweise auf Literaturverzeichniseinträge im Text
+    filecolor=mylink,       % Verknüpfungen, die lokale Dateien öffnen
+    menucolor=mylink,       % Acrobat-Menüpunkte
     urlcolor=mylink,
     pdftex,
-    plainpages=false, % zur korrekten Erstellung der Bookmarks
-    pdfpagelabels=true, % zur korrekten Erstellung der Bookmarks
-    hypertexnames=false, % zur korrekten Erstellung der Bookmarks
+    plainpages=false,       % zur korrekten Erstellung der Bookmarks
+    pdfpagelabels=true,     % zur korrekten Erstellung der Bookmarks
+    hypertexnames=false,    % zur korrekten Erstellung der Bookmarks
     linkcolor=black,
     linktoc=all,
 ]{hyperref}
