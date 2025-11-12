@@ -4,7 +4,7 @@
     a4paper,
     left=20mm,
     right=25mm,
-    top=30mm,
+    top=25mm,
     bottom=25mm
 }
 \setlength{\marginparwidth}{2.5cm}
@@ -24,7 +24,8 @@
 \renewcommand{\headfont}{\normalfont}
 \lohead{\makecell[tl]{\large{\textsc{\titel}}\\ \small{\kurzerUntertitel} \\[0.0ex] \textit{\headmark}}}
 \rohead{\makecell[tr]{\today \\ \autorName \\ \class}}
-\setlength{\headheight}{15mm}
+\setlength{\headheight}{42pt}
+\setlength{\headsep}{10pt}
 
 % Footer
 \DeclareTranslation{english}{version}{Version}
@@ -35,8 +36,9 @@
 \DeclareTranslation{ngerman}{page}{Seite}
 \DeclareTranslation{spanish}{page}{Página}
 
-\ifoot{\GetTranslation{version}: \aktuelleVersion}
-\ofoot[\GetTranslation{page} \thepage/\pageref*{LastPage}]{\GetTranslation{page} \thepage\ / \pageref*{LastPage}}
+\ifoot{\makecell[l]{\GetTranslation{version}: \aktuelleVersion}}
+\ofoot[\GetTranslation{page} \thepage/\pageref*{LastPage}]{\makecell[r]{\GetTranslation{page} \thepage\ / \pageref*{LastPage}}}
+\setlength{\footskip}{18pt}
 
 % Headings according to DIN 5008 in an alignment line
 % ------------------------------------------------------------------------------
