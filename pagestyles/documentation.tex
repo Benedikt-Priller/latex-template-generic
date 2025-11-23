@@ -16,6 +16,7 @@
 	ilines
 ]{scrlayer-scrpage}
 
+% Standard pagestyle with arabic numbering
 % Header and footer -----------------------------------------------------------
 \pagestyle{scrheadings}
 \clearpairofpagestyles
@@ -39,6 +40,18 @@
 \ifoot{\makecell[l]{\GetTranslation{version}: \aktuelleVersion}}
 \ofoot[\GetTranslation{page} \thepage/\pageref*{LastPage}]{\makecell[r]{\GetTranslation{page} \thepage\ / \pageref*{LastPage}}}
 \setlength{\footskip}{18pt}
+
+% Custom pagestyle for frontmatter with roman numbering
+\newpairofpagestyles{frontmatterstyle}{
+  \clearpairofpagestyles
+  \lohead{\makecell[tl]{\large{\textsc{\titel}}\\ \small{\kurzerUntertitel} \\[0.0ex] \textit{\headmark}}}
+  \rohead{\makecell[tr]{\today \\ \autorName \\ \class}}
+
+  \ifoot{\makecell[l]{\GetTranslation{version}: \aktuelleVersion}}
+  \ofoot*{\thepage}
+  \setlength{\headheight}{42pt}
+  \setlength{\headsep}{10pt}
+}
 
 % Headings according to DIN 5008 in an alignment line
 % ------------------------------------------------------------------------------
