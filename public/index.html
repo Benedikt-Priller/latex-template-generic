@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>latex-template-generic</title>
+    <style>
+      :root {
+        --bg: #f7f4ec;
+        --ink: #1d1b18;
+        --accent: #0f766e;
+        --card: #fffdf7;
+        --line: #d8d2c3;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Georgia", "Times New Roman", serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 10% 10%, #fff8e8, transparent 45%),
+          radial-gradient(circle at 90% 90%, #e5f3f0, transparent 40%),
+          var(--bg);
+        min-height: 100vh;
+      }
+
+      main {
+        max-width: 860px;
+        margin: 3rem auto;
+        padding: 0 1rem 3rem;
+      }
+
+      .hero {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 2rem;
+        box-shadow: 0 12px 32px rgba(29, 27, 24, 0.08);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2rem, 5vw, 3rem);
+        line-height: 1.1;
+      }
+
+      p {
+        font-size: 1.06rem;
+        line-height: 1.6;
+      }
+
+      .tag {
+        display: inline-block;
+        margin-top: 1rem;
+        font-size: 0.85rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--accent);
+        border: 1px solid color-mix(in srgb, var(--accent) 40%, white);
+        background: #eff9f7;
+        padding: 0.35rem 0.7rem;
+        border-radius: 999px;
+      }
+
+      pre {
+        margin-top: 1.25rem;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 1rem;
+        overflow-x: auto;
+        background: #fbfaf5;
+      }
+
+      code {
+        font-family: "Courier New", monospace;
+        font-size: 0.95rem;
+      }
+
+      a {
+        color: var(--accent);
+      }
+
+      footer {
+        margin-top: 1rem;
+        color: #6e675c;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 640px) {
+        main {
+          margin: 1.5rem auto;
+        }
+
+        .hero {
+          padding: 1.25rem;
+          border-radius: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <h1>latex-template-generic</h1>
+        <p>
+          A reusable LaTeX template bundle with shared packages, macros, elements, and page styles.
+          This page is served via GitLab Pages.
+        </p>
+        <span class="tag">GitLab Pages Ready</span>
+
+        <h2>Quick Start</h2>
+        <p>Add this repository as a submodule in your LaTeX project:</p>
+        <pre><code>git submodule add git@github.com:Benedikt-Priller/latex-template-generic.git</code></pre>
+
+        <p>Then include the template files from your main <code>.tex</code> file:</p>
+        <pre><code>\newcommand{\templatedir}{../latex-template-generic/}
+
+% Import template
+\input{\templatedir packages}
+\input{\templatedir pagestyles/basic_transcript}
+\input{\templatedir macros}
+\input{\templatedir elements}
+\input{\templatedir letterfonts}</code></pre>
+
+        <footer>Updated for GitLab Pages deployment.</footer>
+      </section>
+    </main>
+  </body>
+</html>
