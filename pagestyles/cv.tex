@@ -10,13 +10,18 @@
 \setlength{\marginparwidth}{2.5cm}
 \setlength{\parindent}{0pt}
 
+\usepackage[
+	automark,
+	headsepline,
+	ilines
+]{scrlayer-scrpage}
+
 % Activate simple scrheadings pagestyle
 \pagestyle{scrheadings}
 \clearpairofpagestyles
 
 % Header
 \renewcommand{\headfont}{\normalfont}
-% Left: document description (use \untertitel or \titel); Right: date only
 \lohead{\large{\textsc{\titel}}}
 \rohead{\today}
 \setlength{\headheight}{12mm}
